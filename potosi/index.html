@@ -10,6 +10,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
+  <style>
+    .support-location-section{padding:clamp(58px,7vw,90px) max(18px,calc((100vw - 1240px)/2 + 18px));background:linear-gradient(180deg,#f8fcef 0%,#fff 100%)}
+    .support-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:22px;align-items:stretch}
+    .support-card,.location-card{border:1px solid rgba(47,132,56,.16);border-radius:26px;background:#fff;box-shadow:0 20px 54px rgba(15,74,45,.10);overflow:hidden}
+    .support-card{padding:26px;display:grid;align-content:start;gap:18px}
+    .support-card .eyebrow,.location-copy .eyebrow{margin-bottom:0}
+    .support-logos{display:grid;grid-template-columns:minmax(0,2.15fr) minmax(190px,.85fr);gap:18px;align-items:center;min-height:170px}
+    .support-logos img{width:100%;height:142px;object-fit:contain;object-position:center}
+    .support-logos .allies-extra{height:142px;padding-left:14px;border-left:1px solid rgba(47,132,56,.16)}
+    .location-card{display:grid;grid-template-rows:auto 1fr}
+    .location-copy{padding:24px 24px 18px;display:grid;gap:6px}
+    .location-copy h3{margin:0;color:#0a3320;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.15}
+    .location-copy p{margin:0;color:#5c7466;font-size:.92rem}
+    .maps-link{display:inline-flex;align-items:center;justify-content:center;width:max-content;margin-top:8px;min-height:38px;padding:0 16px;border-radius:999px;background:#0f4a2d;color:#fff;font-size:.82rem;font-weight:700}
+    .location-card iframe{display:block;width:100%;height:300px;border:0}
+    @media(max-width:900px){.support-grid{grid-template-columns:1fr}.support-logos{grid-template-columns:1fr}.support-logos img,.support-logos .allies-extra{height:120px}.support-logos .allies-extra{padding-left:0;padding-top:12px;border-left:0;border-top:1px solid rgba(47,132,56,.16)}}
+    @media(max-width:600px){.support-card{padding:18px}.support-logos img,.support-logos .allies-extra{height:96px}.location-card iframe{height:260px}}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -22,6 +40,7 @@
       <a href="#programa">Programa</a>
       <a href="#carreras">Carreras</a>
       <a href="#agenda">Agenda</a>
+      <a href="#ubicacion">Ubicación</a>
       <a href="#registro">Registro</a>
     </nav>
     <a class="header-action" href="#registro">Registrarme</a>
@@ -36,7 +55,7 @@
         <p class="subtitle">Conectando talento técnico con oportunidades verdes</p>
         <div class="event-card">
           <div class="event-date"><strong>20</strong><span>AGO</span></div>
-          <div class="event-info"><span>Jueves · 2026</span><strong>Instituto Tecnológico Superior “Nuevo Amanecer”</strong><small>Av. Las Banderas Nro. 9, Zona Cementerio · Potosí</small></div>
+          <div class="event-info"><span>Jueves · 2026</span><strong>Instituto Tecnológico Superior “Nuevo Amanecer”</strong><small>Av. Circunvalación Nº 8 · Potosí</small></div>
           <div class="event-time"><strong>09:30</strong><span>Inicio</span></div>
         </div>
         <p class="hero-text">Una jornada de articulación entre empresas, Institutos Técnicos Tecnológicos, estudiantes y actores estratégicos para impulsar prácticas profesionales, empleabilidad juvenil y competencias verdes alineadas al sector productivo.</p>
@@ -76,6 +95,28 @@
     <section class="institutes-section">
       <div class="section-heading"><p class="eyebrow">Institutos participantes</p><h2>Formación técnica en <em>Potosí</em></h2></div>
       <div class="institute-grid"><article><strong>Instituto Tecnológico Superior “Nuevo Amanecer”</strong></article><article><strong>Instituto Tecnológico Superior “Potosí”</strong></article></div>
+    </section>
+
+    <section class="support-location-section" id="ubicacion" aria-label="Instituciones y ubicación del evento">
+      <div class="section-heading"><p class="eyebrow">Instituciones que hacen posible el encuentro</p><h2>Financia, cofinancia y <em>aliados</em></h2></div>
+      <div class="support-grid">
+        <article class="support-card">
+          <p class="eyebrow">Financia · Cofinancia · Aliados</p>
+          <div class="support-logos">
+            <img src="https://talento-verde-landing-vercel-v47-ex.vercel.app/assets/logos-hero-final-institucional-crop.png" alt="Swisscontact, LED, Unión Europea, Ministerio de Educación y Cámara Nacional de Industrias" />
+            <img class="allies-extra" src="assets/logos-organizadores.svg" alt="Federación de Empresarios Privados de Potosí y CAMEBOL Potosí" />
+          </div>
+        </article>
+        <article class="location-card">
+          <div class="location-copy">
+            <p class="eyebrow">Ubicación</p>
+            <h3>Instituto Tecnológico Superior “Nuevo Amanecer”</h3>
+            <p>Av. Circunvalación Nº 8 · Potosí, Bolivia</p>
+            <a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=Instituto+Tecnol%C3%B3gico+Superior+Nuevo+Amanecer+Potos%C3%AD+Bolivia" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+          </div>
+          <iframe title="Mapa del Instituto Tecnológico Superior Nuevo Amanecer" src="https://maps.google.com/maps?iwloc=near&amp;output=embed&amp;q=Instituto+Tecnol%C3%B3gico+Nuevo+Amanecer&amp;t=m&amp;z=15" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </article>
+      </div>
     </section>
 
     <section class="register-section" id="registro">
