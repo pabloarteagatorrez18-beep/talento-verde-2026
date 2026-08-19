@@ -6,6 +6,67 @@ const navLinks = document.querySelectorAll(".nav-links a");
 const agendaItems = document.querySelectorAll(".agenda-list details");
 const forms = document.querySelectorAll(".registration-form");
 
+const instituteCards = document.querySelectorAll(".institute-grid article");
+const instituteLogos = [
+  { src: "assets/logo-nuevo-amanecer.svg", alt: "Instituto Tecnológico Superior Nuevo Amanecer" },
+  { src: "assets/logo-instituto-potosi.svg", alt: "Instituto Tecnológico Superior Potosí" },
+];
+
+instituteCards.forEach((card, index) => {
+  const logo = instituteLogos[index];
+  if (!logo) return;
+
+  const frame = document.createElement("div");
+  frame.className = "institute-logo-frame";
+
+  const img = document.createElement("img");
+  img.src = logo.src;
+  img.alt = logo.alt;
+  img.loading = "lazy";
+
+  frame.appendChild(img);
+  card.prepend(frame);
+});
+
+const instituteStyles = document.createElement("style");
+instituteStyles.textContent = `
+  .institute-grid article {
+    min-height: 235px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 28px 24px !important;
+  }
+  .institute-logo-frame {
+    width: 100%;
+    max-width: 310px;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .institute-logo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .institute-grid article strong {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    .institute-grid article { min-height: 220px; }
+    .institute-logo-frame { max-width: 280px; height: 94px; }
+  }
+`;
+document.head.appendChild(instituteStyles);
+
 menuToggle?.addEventListener("click", () => {
   const isOpen = siteHeader?.classList.toggle("menu-open") ?? false;
   menuToggle.setAttribute("aria-expanded", String(isOpen));
