@@ -1,4 +1,4 @@
-const GOOGLE_SCRIPT_ENDPOINT = "";
+const GOOGLE_SCRIPT_ENDPOINT = "https://script.google.com/macros/s/AKfycbzR475n2GOl_DX_-M1MQDSaK4svzoBt9iAKAWcdzWqsG-1QB7wAYq8GlFNpTWekLPQ/exec";
 
 const siteHeader = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
